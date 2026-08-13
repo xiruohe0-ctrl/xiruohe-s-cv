@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>贺熙若 - 简历</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.5;
+    color: #2c2c2c;
+    background: #fff;
+    padding: 32px 40px;
+    max-width: 210mm;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1.5px solid #1a1a1a;
+    position: relative;
+  }
+  .header-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .name {
+    font-family: "Noto Serif SC", "Songti SC", serif;
+    font-size: 22pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 6px;
+    margin-bottom: 6px;
+    text-align: center;
+    width: 100%;
+  }
+  .contact-row {
+    font-size: 8.5pt;
+    color: #666;
+    line-height: 1.6;
+    text-align: center;
+    width: 100%;
+  }
+  .contact-row span {
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .contact-row span:first-child { margin-right: 2px; }
+  .contact-row span:last-child { margin-left: 2px; }
+  .contact-sep { color: #ccc; }
+  .photo-box {
+    width: 75px;
+    height: 95px;
+    border: none;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* ── Section ── */
+  .section { margin-bottom: 14px; }
+  .section-title {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  /* ── Education ── */
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .edu-row:last-child { margin-bottom: 0; }
+  .edu-left {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex: 1;
+  }
+  .edu-school {
+    font-family: "Noto Serif SC", serif;
+    font-size: 10pt;
+    font-weight: 600;
+    color: #1a1a1a;
+    white-space: nowrap;
+  }
+  .edu-degree {
+    font-size: 8.5pt;
+    color: #888;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .edu-major {
+    font-size: 8.5pt;
+    color: #666;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .edu-courses {
+    font-size: 8.5pt;
+    color: #888;
+    white-space: nowrap;
+  }
+  .edu-date {
+    font-size: 8.5pt;
+    color: #aaa;
+    font-weight: 300;
+    white-space: nowrap;
+    text-align: right;
+    padding-left: 16px;
+  }
+
+  /* ── Profile ── */
+  .profile {
+    margin-top: 8px;
+    padding: 8px 14px;
+    font-size: 8.5pt;
+    color: #666;
+    font-style: italic;
+    line-height: 1.5;
+    background: #f8f8f8;
+    border-radius: 3px;
+  }
+
+  /* ── Experience ── */
+  .exp-block {
+    margin-bottom: 12px;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .exp-left { display: flex; align-items: baseline; gap: 8px; }
+  .exp-company {
+    font-family: "Noto Serif SC", serif;
+    font-size: 10pt;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  .exp-role {
+    font-size: 9pt;
+    color: #666;
+    font-weight: 400;
+  }
+  .exp-date {
+    font-size: 8.5pt;
+    color: #aaa;
+    font-weight: 300;
+    white-space: nowrap;
+    min-width: 110px;
+    text-align: right;
+  }
+
+  .exp-item {
+    margin-bottom: 3px;
+    padding-left: 12px;
+    position: relative;
+    line-height: 1.45;
+  }
+  .exp-item::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: #999;
+    font-weight: 600;
+  }
+  .exp-item-label {
+    font-weight: 600;
+    font-size: 9pt;
+    color: #333;
+  }
+  .exp-item-content {
+    font-size: 9pt;
+    color: #555;
+    font-weight: 300;
+  }
+  .exp-item-content strong {
+    font-weight: 600;
+    color: #333;
+  }
+
+  /* ── Skills ── */
+  .skills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+  }
+  .skill-tag {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    font-size: 8.5pt;
+    color: #555;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-right: 20px;
+  }
+  .skill-tag::before {
+    content: "·";
+    color: #ccc;
+    margin-right: 4px;
+  }
+  .skill-label {
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+  }
+
+  /* ── Print ── */
+  @media print {
+    body {
+      padding: 20px 30px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    @page {
+      margin: 0;
+      size: A4;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <div class="header-center">
+    <div class="name">贺熙若</div>
+    <div class="contact-row">
+      <span>Tel：13232523602</span><span class="contact-sep">|</span><span>xiruohe0@gmail.com</span>
+    </div>
+  </div>
+  <div class="photo-box"><img src="data:image/jpeg;base64,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" alt="证件照"></div>
+</div>
+
+<!-- ══ EDUCATION ══ -->
+<div class="section">
+  <div class="section-title">教育背景</div>
+
+  <div class="edu-row">
+    <div class="edu-left">
+      <span class="edu-school">香港科技大学</span>
+      <span class="edu-degree">硕士</span>
+      <span class="edu-major">艺术与 AI 创意</span>
+      <span style="color:#ccc;">|</span>
+      <span class="edu-courses">创意编程 / AI 视觉艺术 / AI 影视制作</span>
+    </div>
+    <div class="edu-date">2025.09 – 2027.01</div>
+  </div>
+
+  <div class="edu-row">
+    <div class="edu-left">
+      <span class="edu-school">澳门科技大学</span>
+      <span class="edu-degree">本科</span>
+      <span class="edu-major">影视制作</span>
+      <span style="color:#ccc;">|</span>
+      <span class="edu-courses">电影制作 / 剧本写作 / 影视制片管理</span>
+    </div>
+    <div class="edu-date">2021.09 – 2025.07</div>
+  </div>
+
+  <div class="profile">
+    聚焦内容生态与用户/创作者运营，具备用户洞察、内容供给优化及产品体验运营经验，熟悉数据分析与AI工具在运营场景中的应用。
+  </div>
+</div>
+
+<!-- ══ EXPERIENCE ══ -->
+<div class="section">
+  <div class="section-title">实习经历</div>
+
+  <div class="exp-block">
+    <div class="exp-header">
+      <div class="exp-left">
+        <span class="exp-company">快手</span>
+        <span class="exp-role">快影产品运营实习生</span>
+      </div>
+      <div class="exp-date">2026.05 – 至今</div>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">用户需求与供给分析</span>
+      <span class="exp-item-content"> — 针对征稿模板内容分散、同质化等问题，基于模板使用、导出等数据对供给内容进行分类拆解，分析高表现模板特征；结合用户外呼进一步探索模板使用场景与需求差异。</span>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">供给策略与内容运营</span>
+      <span class="exp-item-content"> — 参与暑期模板征稿策略执行，结合历史模板使用、导出数据拆解高表现内容方向，为模板师供给选题提供参考；实验期间日均新增达标模板 124 个。</span>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">效果验证与策略优化</span>
+      <span class="exp-item-content"> — 跟踪模板使用、导出等核心指标，累计带动模板使用 1.3w+、导出 4000+；基于数据反馈持续优化供给方向，推动「需求分析—供给补充—效果验证」的内容运营闭环。</span>
+    </div>
+  </div>
+
+  <div class="exp-block">
+    <div class="exp-header">
+      <div class="exp-left">
+        <span class="exp-company">vivo</span>
+        <span class="exp-role">影像产品运营实习生</span>
+      </div>
+      <div class="exp-date">2025.12 – 2026.04</div>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">AI 功能市场教育</span>
+      <span class="exp-item-content"> — 针对 AI 影像功能上市初期用户认知不足，策划教程、场景及效果对比类内容；联动 100+ 体验官产出 2000+ 内容，累计带动社媒曝光 400w+。</span>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">用户共创体系运营</span>
+      <span class="exp-item-content"> — 搭建体验官共创体系，用户规模从 30 人扩展至 100+；设计分层机制，引入种子用户及「课代表」机制，沉淀 QA 文档与主题活动 SOP。</span>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">用户反馈与需求挖掘</span>
+      <span class="exp-item-content"> — 汇总手机影像功能 Bug 及 vivo 摄影 App 用户反馈，结合用户影响范围与问题优先级梳理需求方向，输出 15+ 项优化建议，其中 6 项进入产品优化流程。</span>
+    </div>
+  </div>
+
+  <div class="exp-block">
+    <div class="exp-header">
+      <div class="exp-left">
+        <span class="exp-company">字节跳动</span>
+        <span class="exp-role">抖音直播玩法发行运营实习生</span>
+      </div>
+      <div class="exp-date">2025.05 – 2025.09</div>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">用户分层运营</span>
+      <span class="exp-item-content"> — 基于主播生命周期及参与行为差异，细化新主播、活跃主播、流失主播分层，设计差异化活动与触达策略。</span>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">用户触达优化</span>
+      <span class="exp-item-content"> — 通过站内信、自见指示器、主播后台等多渠道开展触达测试；推动活动任务新增透传至自见指示器资源位，设计新主播「盲盒任务」机制降低参与门槛。</span>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">项目成果</span>
+      <span class="exp-item-content"> — 累计覆盖 50w+ 主播，带来增量流水 231w，拉新 3287 人、召回 4008 人，日均新增有效开播主播 118 人。</span>
+    </div>
+  </div>
+
+  <div class="exp-block">
+    <div class="exp-header">
+      <div class="exp-left">
+        <span class="exp-company">BIGO LIVE</span>
+        <span class="exp-role">海外内容生态运营实习生</span>
+      </div>
+      <div class="exp-date">2024.05 – 2024.09</div>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">海外内容趋势洞察</span>
+      <span class="exp-item-content"> — 对比 TikTok、Instagram 与站内内容分布，分析北美用户内容偏好，挖掘目标内容方向并输出选题建议。</span>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">社区营销活动</span>
+      <span class="exp-item-content"> — 独立策划并落地 #BigoLiveMoments 等社区活动，负责创意、传播及复盘全流程，累计带动 15w+ 用户参与、总曝光 200w+。</span>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-label">本土化内容优化</span>
+      <span class="exp-item-content"> — 基于北美用户视觉偏好洞察，协同设计团队完成 30+ 组本土化素材迭代，优化落地页传播效果。</span>
+    </div>
+  </div>
+
+  <div class="exp-block">
+    <div class="exp-header">
+      <div class="exp-left">
+        <span class="exp-company">芒果TV</span>
+        <span class="exp-role">内容产品推广实习生</span>
+      </div>
+      <div class="exp-date">2023.06 – 2023.09</div>
+    </div>
+    <div class="exp-item">
+      <span class="exp-item-content">围绕头部剧集宣推参与内容策划与用户传播，产出 20+ 篇宣推物料，累计覆盖 5 亿+ 话题曝光。</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SKILLS ══ -->
+<div class="section">
+  <div class="section-title">技能</div>
+  <div class="skills-wrap">
+    <span class="skill-tag"><span class="skill-label">AI 应用与内容生产</span>ChatGPT、DeepSeek、即梦、Midjourney、Prompt 设计，AI 辅助内容创作与运营方案产出</span>
+    <span class="skill-tag"><span class="skill-label">数据分析</span>Excel、SQL 基础、Python 基础，数据清洗与可视化</span>
+    <span class="skill-tag"><span class="skill-label">内容创作与设计</span>Figma、Photoshop、Final Cut Pro、剪映，影视制作与内容策划</span>
+    <span class="skill-tag"><span class="skill-label">语言能力</span>英语：IELTS 6.5，具备英文内容分析与跨文化用户研究经验</span>
+  </div>
+</div>
+
+<script type="text/javascript" src="/accessproxy_statics/h5_fp.js" defer></script>
+<script type="text/javascript" src="/accessproxy_statics/wm.js" defer></script>
+</body>
+</html>
