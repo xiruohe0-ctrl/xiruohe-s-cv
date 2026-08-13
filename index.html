@@ -60,15 +60,16 @@
   .contact-row span:first-child { margin-right: 2px; }
   .contact-row span:last-child { margin-left: 2px; }
   .contact-sep { color: #ccc; }
+  
   .photo-box {
     width: 70px;
     height: 95px;
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: -1.5px; /* 让照片底部刚好踩在黑线上 */
     overflow: hidden;
-    border: none;
+    border: 1px solid #e5e5e5; /* 增加低调的浅灰色边框 */
+    background: #fff;
   }
   
   .photo-box img {
@@ -76,6 +77,7 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+    display: block;
   }
 
   /* ── Section ── */
@@ -260,7 +262,7 @@
       <span>Tel：13232523602</span><span class="contact-sep">|</span><span>xiruohe0@gmail.com</span>
     </div>
   </div>
- <div class="photo-box">
+  <div class="photo-box">
     <img src="证件照.jpg" alt="证件照">
   </div>
 </div>
