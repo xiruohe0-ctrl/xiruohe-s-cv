@@ -61,14 +61,17 @@
   .contact-row span:last-child { margin-left: 2px; }
   .contact-sep { color: #ccc; }
   
- .photo-box {
+  .photo-box {
     width: 70px;
     height: 95px;
     position: absolute;
-    right: 15px; /* 把 0 改成了 15px，稍微往左挪一点点 */
-    bottom: -1.5px; /* 依然保持底部刚好踩在黑线上 */
+    right: 15px;
+    bottom: -1.5px;
     overflow: hidden;
-    border: 1px solid #e5e5e5; 
+    border-top: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1.5px solid #1a1a1a; /* 底部边框颜色和粗细与黑线完全一致，实现无缝融合 */
     background: #fff;
   }
   
