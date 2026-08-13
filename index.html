@@ -14,9 +14,13 @@
     line-height: 1.5;
     color: #2c2c2c;
     background: #fff;
-    padding: 32px 40px;
+    padding: 36px 40px;
     max-width: 210mm;
     margin: 0 auto;
+    min-height: 297mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   /* ── Header ── */
@@ -71,7 +75,7 @@
     border-top: 1px solid #e5e5e5;
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
-    border-bottom: 1.5px solid #1a1a1a; /* 底部边框颜色和粗细与黑线完全一致，实现无缝融合 */
+    border-bottom: 1.5px solid #1a1a1a;
     background: #fff;
   }
   
@@ -244,7 +248,8 @@
   /* ── Print ── */
   @media print {
     body {
-      padding: 20px 30px;
+      padding: 36px 40px;
+      min-height: 297mm;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
