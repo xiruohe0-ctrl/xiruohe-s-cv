@@ -36,6 +36,13 @@
     align-items: center;
     justify-content: center;
   }
+  .header-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .name {
     font-family: "Noto Serif SC", "Songti SC", serif;
     font-size: 22pt;
@@ -63,12 +70,13 @@
   .photo-box {
     width: 75px;
     height: 95px;
-    border: none;
+    border: 1px solid #e5e5e5;
+    border-bottom: 1.5px solid #1a1a1a;
     flex-shrink: 0;
     overflow: hidden;
     position: absolute;
     right: 10px;
-    bottom: 0;
+    bottom: -1.5px;
   }
   .photo-box img {
     width: 100%;
@@ -259,7 +267,7 @@
       <span>Tel：13232523602</span><span class="contact-sep">|</span><span>xiruohe0@gmail.com</span>
     </div>
   </div>
-  <div class="photo-box"><img src="证件照.jpg" alt="证件照"></div>
+  <div class="photo-box"><img src="photo.jpg" alt="证件照"></div>
 </div>
 
 <!-- ══ EDUCATION ══ -->
@@ -391,7 +399,7 @@
         <span class="exp-company">芒果TV</span>
         <span class="exp-role">内容产品推广实习生</span>
       </div>
-      <div class="exp-date">2023.06 – 2023.09</div>
+      <div class="exp-date">2023.05 – 2023.09</div>
     </div>
     <div class="exp-item">
       <span class="exp-item-content">围绕头部剧集宣推参与内容策划与用户传播，产出 20+ 篇宣推物料，累计覆盖 5 亿+ 话题曝光。</span>
