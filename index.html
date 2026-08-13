@@ -14,13 +14,9 @@
     line-height: 1.5;
     color: #2c2c2c;
     background: #fff;
-    padding: 36px 40px;
+    padding: 32px 40px;
     max-width: 210mm;
     margin: 0 auto;
-    min-height: 297mm;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 
   /* ── Header ── */
@@ -70,12 +66,12 @@
     height: 95px;
     position: absolute;
     right: 15px;
-    bottom: -1.5px;
+    bottom: -15.5px; /* 14px padding-bottom + 1.5px border，让照片底部完美压在黑线上 */
     overflow: hidden;
     border-top: 1px solid #e5e5e5;
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid #e5e5e5;
-    border-bottom: 1.5px solid #1a1a1a;
+    border-bottom: 1.5px solid #1a1a1a; /* 底部与黑线融合 */
     background: #fff;
   }
   
@@ -248,8 +244,7 @@
   /* ── Print ── */
   @media print {
     body {
-      padding: 36px 40px;
-      min-height: 297mm;
+      padding: 32px 40px;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
