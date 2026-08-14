@@ -19,64 +19,70 @@
     margin: 0 auto;
   }
 
-  /* ── Header ── */
+  /* ── Header 绝对居中重构 ── */
   .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 14px;
-    margin-bottom: 14px;
-    border-bottom: 1.5px solid #1a1a1a;
     position: relative;
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+    border-bottom: 1.5px solid #1a1a1a;
+    text-align: center;
   }
-  .header-center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  
+  .header-main {
+    width: 100%;
+    text-align: center;
   }
-  .header-center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+
   .name {
     font-family: "Noto Serif SC", "Songti SC", serif;
-    font-size: 22pt;
+    font-size: 24pt;
     font-weight: 700;
     color: #1a1a1a;
-    letter-spacing: 6px;
-    margin-bottom: 6px;
-    text-align: center;
-    width: 100%;
+    letter-spacing: 12px;
+    margin-bottom: 10px;
+    padding-left: 12px; /* 精细补偿 letter-spacing 造成的视觉微偏，实现绝对居中 */
   }
+
   .contact-row {
     font-size: 8.5pt;
-    color: #666;
-    line-height: 1.6;
-    text-align: center;
-    width: 100%;
+    color: #555;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
+  
   .contact-row span {
     white-space: nowrap;
-    display: inline-block;
   }
-  .contact-row span:first-child { margin-right: 2px; }
-  .contact-row span:last-child { margin-left: 2px; }
-  .contact-sep { color: #ccc; }
+
+  .dot { 
+    color: #bbb; 
+    font-size: 7pt;
+  }
+
+  .contact-row a {
+    color: #1a1a1a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 0.5px;
+    font-weight: 400; /* 主页不加粗，仅保留优雅下划线 */
+  }
+  .contact-row a:hover {
+    color: #000;
+  }
+
+  /* 证件照位置与三面边框调整 */
   .photo-box {
     width: 75px;
     height: 95px;
     border: 1px solid #e5e5e5;
-    border-bottom: 1.5px solid #1a1a1a;
-    flex-shrink: 0;
-    overflow: hidden;
+    border-bottom: none; /* 仅保留上、左、右三面 */
     position: absolute;
-    right: 10px;
-    bottom: -1.5px;
+    right: 15px; 
+    top: 0;
+    overflow: hidden;
+    background: #f9f9f9;
   }
   .photo-box img {
     width: 100%;
@@ -261,13 +267,17 @@
 
 <!-- ══ HEADER ══ -->
 <div class="header">
-  <div class="header-center">
+  <div class="header-main">
     <div class="name">贺熙若</div>
     <div class="contact-row">
-      <span>Tel：13232523602</span><span class="contact-sep">|</span><span>xiruohe0@gmail.com</span>
+      <span>Tel: 13232523602</span>
+      <span class="dot">·</span>
+      <span>xiruohe0@gmail.com</span>
+      <span class="dot">·</span>
+      <span><a href="https://xiruohe-s-space.111407.xyz" target="_blank">xiruohe-s-space.111407.xyz</a></span>
     </div>
   </div>
-  <div class="photo-box"><img src="证件照.jpg" alt="证件照"></div>
+  <div class="photo-box"><img src="photo.jpg" alt="证件照"></div>
 </div>
 
 <!-- ══ EDUCATION ══ -->
@@ -297,7 +307,7 @@
   </div>
 
   <div class="profile">
-    聚焦内容生态与用户/创作者运营，具备用户洞察、内容供给优化及产品体验运营经验，熟悉数据分析与AI工具在运营场景中的应用。
+    聚焦 AI 内容生态与创作者运营，具备用户洞察、内容供给优化及产品运营经验，熟悉数据分析与 AI 工具应用。
   </div>
 </div>
 
@@ -314,16 +324,16 @@
       <div class="exp-date">2026.05 – 至今</div>
     </div>
     <div class="exp-item">
-      <span class="exp-item-label">用户需求与供给分析</span>
-      <span class="exp-item-content"> — 针对征稿模板内容分散、同质化等问题，基于模板使用、导出等数据对供给内容进行分类拆解，分析高表现模板特征；结合用户外呼进一步探索模板使用场景与需求差异。</span>
+      <span class="exp-item-label">模板供给分析与需求洞察</span>
+      <span class="exp-item-content"> — 针对模板供给内容分散、同质化及用户需求匹配不足等问题，基于模板使用、导出等核心数据拆解内容表现差异，分析高表现模板特征；结合用户外呼与使用反馈，探索不同用户群体的模板使用场景与需求差异。</span>
     </div>
     <div class="exp-item">
-      <span class="exp-item-label">供给策略与内容运营</span>
-      <span class="exp-item-content"> — 参与暑期模板征稿策略执行，结合历史模板使用、导出数据拆解高表现内容方向，为模板师供给选题提供参考；实验期间日均新增达标模板 124 个。</span>
+      <span class="exp-item-label">模板供给策略与生态运营</span>
+      <span class="exp-item-content"> — 参与暑期模板供给策略制定&amp;执行，结合历史模板使用、导出数据分析高潜内容方向，为模板师选题与生产提供方向参考；实验期间日均新增达标模板 124 个。</span>
     </div>
     <div class="exp-item">
-      <span class="exp-item-label">效果验证与策略优化</span>
-      <span class="exp-item-content"> — 跟踪模板使用、导出等核心指标，累计带动模板使用 1.3w+、导出 4000+；基于数据反馈持续优化供给方向，推动「需求分析—供给补充—效果验证」的内容运营闭环。</span>
+      <span class="exp-item-label">数据复盘与策略优化</span>
+      <span class="exp-item-content"> — 跟踪模板使用、导出等核心指标，累计带动模板使用 1.3w+、导出 4000+；基于数据反馈持续优化供给方向，推动「需求洞察—供给优化—效果验证」运营闭环。</span>
     </div>
   </div>
 
@@ -358,16 +368,16 @@
       <div class="exp-date">2025.05 – 2025.09</div>
     </div>
     <div class="exp-item">
-      <span class="exp-item-label">用户分层运营</span>
-      <span class="exp-item-content"> — 基于主播生命周期及参与行为差异，细化新主播、活跃主播、流失主播分层，设计差异化活动与触达策略。</span>
+      <span class="exp-item-label">主播分层与精细化运营</span>
+      <span class="exp-item-content"> — 基于主播生命周期及参与行为数据，拆解新主播、活跃主播、流失主播等核心人群，识别不同阶段参与痛点与需求差异，支撑玩法活动人群策略优化。</span>
     </div>
     <div class="exp-item">
-      <span class="exp-item-label">用户触达优化</span>
-      <span class="exp-item-content"> — 通过站内信、自见指示器、主播后台等多渠道开展触达测试；推动活动任务新增透传至自见指示器资源位，设计新主播「盲盒任务」机制降低参与门槛。</span>
+      <span class="exp-item-label">玩法机制与触达链路优化</span>
+      <span class="exp-item-content"> — 围绕直播互动玩法参与链路，协同优化站内信、自见指示器、主播后台等多渠道触达策略；针对不同主播群体设计差异化运营机制（如新主播盲盒任务、流失主播收益感知强化），降低参与门槛并提升玩法参与意愿。</span>
     </div>
     <div class="exp-item">
-      <span class="exp-item-label">项目成果</span>
-      <span class="exp-item-content"> — 累计覆盖 50w+ 主播，带来增量流水 231w，拉新 3287 人、召回 4008 人，日均新增有效开播主播 118 人。</span>
+      <span class="exp-item-label">数据分析与项目效果</span>
+      <span class="exp-item-content"> — 跟踪任务参与、主播开播及流水等核心指标，分析活动效果并推动策略迭代；累计覆盖 50w+ 主播用户，带动增量流水 231w，实现拉新主播 3287 人、召回主播 4008 人，日均新增有效开播主播 118 人。</span>
     </div>
   </div>
 
@@ -399,7 +409,7 @@
         <span class="exp-company">芒果TV</span>
         <span class="exp-role">内容产品推广实习生</span>
       </div>
-      <div class="exp-date">2023.05 – 2023.09</div>
+      <div class="exp-date">2023.06 – 2023.09</div>
     </div>
     <div class="exp-item">
       <span class="exp-item-content">围绕头部剧集宣推参与内容策划与用户传播，产出 20+ 篇宣推物料，累计覆盖 5 亿+ 话题曝光。</span>
